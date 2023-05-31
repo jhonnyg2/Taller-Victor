@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<title>Formularios</title>
+</head>
+<body>
+	<div class="contenedor-formulario">
+		<div class="wrap">
+			<form action="" class="formulario" name="formulario_registro" method="get">
+				<div>
+					<div class="input-group">
+						<label class="label">Proceso de tiqueteria</label><br><br>
+					</div>
+					<div class="input-group">
+						<input type="text" id="nombre" name="nombre" pattern="[a-zA-Z]+">
+						<label class="label" for="Nombres">Nombres y Apellidos:</label>
+					</div>
+					<div class="input-group">
+						<input type="text" id="direccion" name="direccion">
+						<label class="label" for="direccion">Direccion:</label>
+					</div>
+					<div class="input-group">
+						<input type="number" id="telefono" name="telefono">
+						<label class="label" for="telefono">Telefono:</label>
+					</div>
+					<div class="input-group">
+						<input type="email" id="correo" name="correo">
+						<label class="label" for="correo">Correo:</label>
+					</div>
+					<div class="input-group">
+						<input type="number" id="edad" name="edad">
+						<label class="label" for="edad">Edad:</label>
+					</div>
+					<div class="input-group">
+						<input type="number" id="peso" name="peso">
+						<label class="label" for="peso">Peso de equipaje (kg):</label>
+					</div>
+					<div class="input-group radio">
+						<input type="radio" name="sexo" id="hombre" value="Hombre">
+						<label for="hombre">Hombre</label>
+
+						<input type="radio" name="sexo" id="mujer" value="Mujer">
+						<label for="mujer">Mujer</label>
+
+						<input type="radio" name="sexo" id="otros" value="Otros">
+						<label for="otros">Otros</label>
+					</div>
+					<div class="input-group">
+						<label class="label">Ciudad de origen y Ciudad de destino</label><br><br>
+					</div>
+					<div class="input-group radio">
+						<input type="radio" name="opcion" id="opcion1" value="true">
+						<label for="opcion1">BOGOTA - CALI $ 190000</label>
+
+						<input type="radio" name="opcion" id="opcion2" value="true">
+						<label for="opcion2">BOGOTA - MEDELLIN $ 165000</label>
+
+						<input type="radio" name="opcion" id="opcion3" value="true">
+						<label for="opcion3">BOGOTA - MANIZALES $ 135000</label>
+
+						<input type="radio" name="opcion" id="opcion4" value="true">
+						<label for="opcion4">BOGOTA - BARRANQUILLA $ 245000</label>
+
+						<input type="radio" name="opcion" id="opcion5" value="true">
+						<label for="opcion5">CALI - BOGOTA $ 190000</label>
+
+						<input type="radio" name="opcion" id="opcion6" value="true">
+						<label for="opcion6">MEDELLIN - BOGOTA $ 165000</label>
+
+						<input type="radio" name="opcion" id="opcion7" value="true">
+						<label for="opcion7">MANIZALES - BOGOTA $ 135000</label>
+
+						<input type="radio" name="opcion" id="opcion8" value="true">
+						<label for="opcion8">BARRANQUILLA - BOGOTA $ 245000</label>
+					</div>
+					<div class="input-group checkbox">
+						<input type="checkbox" name="terminos" id="terminos" value="true">
+						<label for="terminos">Terminos y condiciones</label>
+					</div>
+						
+					<input type="submit" id="btn-submit" value="Enviar">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script src="js/formulario.js"></script>
+</body>
+</html>

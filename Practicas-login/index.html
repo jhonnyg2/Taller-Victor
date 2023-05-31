@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Autenticacion de Usuario</title>
+    <script src="login.js"></script>
+</head>
+<body>
+    <div class="box">
+        <form id="form1" name="form1" method=post action="vistas/index.html" onsubmit="return validar()">
+            <h2>Autenticacion de Usuario</h2>
+            <div class="inputbox">
+                <input type="text" id="Usuario" name="Usuario" placeholder="Usuario">
+                <i></i>
+            </div>
+            <div class="inputbox">
+                <input type="text" id="Contra" name="Contra" placeholder="Contraseña">
+                <i></i>
+            </div>
+            <input type="submit" name="" value="Ingresar">
+        </form>
+    </div>
+</body>
+</html>
