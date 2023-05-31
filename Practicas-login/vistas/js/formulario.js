@@ -10,7 +10,7 @@
 		for (var i = 0; i < elementos.length; i++) {
 			// Identificamos si el elemento es de tipo texto, email, password, radio o checkbox
 			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type =="number") {
-				// Si es tipo texto, email o password vamos a comprobar que esten completados los input
+				// Si es tipo texto, email o numerico vamos a comprobar que esten completados los input
 				if (elementos[i].value.length == 0) {
 					console.log('El campo ' + elementos[i].name + ' esta incompleto');
 					elementos[i].className = elementos[i].className + " error";
@@ -18,6 +18,19 @@
 				} else {
 					elementos[i].className = elementos[i].className.replace(" error", "");
 				}
+			}
+		}
+		return true;
+	};
+	var valicorre= function(){ 
+		var ValidaCorreos = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+		if (elementos[i].type == "email"){
+			if( ValidaCorreos.test(elementos[i].value.length ==0) ){
+				alert('Correo Electrónico Válido');
+				return true;
+			}else{
+				alert('Correo Electrónico Inválido');
+				return false;
 			}
 		}
 		return true;
@@ -115,6 +128,9 @@
 			e.preventDefault();
 		} else if (!validarCheckbox()) {
 			console.log('Falto validar Checkbox');
+			e.preventDefault();
+		}else if (!valicorre) {
+			console.log('Falto validar el correo');
 			e.preventDefault();
 		}else {
 			alert('Envia');

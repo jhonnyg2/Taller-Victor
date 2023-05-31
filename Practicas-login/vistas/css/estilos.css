@@ -6,9 +6,12 @@
   box-sizing: border-box; }
 
 body {
+  background-image: url(../../avi.jpg);
   background: #f2f2f2;
   font-family: "Roboto";
-  border-top: 30px solid #303F9F; }
+  position: sticky;
+  border-top: 30px solid #303F9F; 
+}
 
 .wrap {
   width: 90%;
