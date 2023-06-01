@@ -124,7 +124,7 @@
 			console.log('Falto validar los Radio Button');
 			e.preventDefault();
 		}else if(!validaroption()){
-			console.log('Falto validar los Cehckbox de ciudad');
+			console.log('Falto validar los Checkbox de ciudad');
 			e.preventDefault();
 		} else if (!validarCheckbox()) {
 			console.log('Falto validar Checkbox');
