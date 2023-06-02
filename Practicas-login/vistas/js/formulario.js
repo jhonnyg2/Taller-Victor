@@ -176,8 +176,19 @@
 		if (!validarInputs()) {
 			console.log('Falto validar los Input');
 			e.preventDefault();
+<<<<<<< HEAD
 		}else if (!valiletras()) {
 			console.log('Falto validar el nombre');
+=======
+		} else if (!validarRadios()) {
+			console.log('Falto validar los Radio Button');
+			e.preventDefault();
+		}else if(!validaroption()){
+			console.log('Falto validar los Checkbox de ciudad');
+			e.preventDefault();
+		} else if (!validarCheckbox()) {
+			console.log('Falto validar Checkbox');
+>>>>>>> 39dba6fa9e2bba95155124dd90ff4441cd4dd9e8
 			e.preventDefault();
 		}else if (!valicorre) {
 			console.log('Falto validar el correo');
