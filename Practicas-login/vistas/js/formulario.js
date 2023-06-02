@@ -23,8 +23,9 @@
 		return true;
 	};
 	var valiletras= function () {
-		var letras = document.getElementById("nombre");
+		var letras = document.getElementById("nombre").value;
 		var patt = new RegExp(/^[A-Za-z\s]+$/g);
+		alert("Ingresa a la función valiletras");
 		if (elementos[i].type =="text") {
 			if (patt.test(letras.value)) {
 				alert('Nombre valido');
@@ -37,7 +38,7 @@
 		return true;
 	};
 	var valicorre= function(){ 
-		var cor= document.getElementById("correo")
+		var cor= document.getElementById("correo").value;
 		var ValidaCorreos = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 		if (elementos[i].type == "email"){
 			if(ValidaCorreos.test(cor.value) ){
@@ -51,9 +52,9 @@
 		return true;
 	};
 	var valinumeros= function () {
-		var num = document.getElementById("telefono");
+		var num = document.getElementById("telefono").value;
 		var patt = new RegExp(/^[0-9\s]+$/g);
-		if (elementos[i].type =="number") {
+		if (elementos[i].getElementById =="telefono") {
 			if (patt.test(num.value)) {
 				alert('telefono valido');
 				return true;
@@ -65,9 +66,9 @@
 		return true;
 	};
 	var valiedad= function () {
-		var edad = document.getElementById("edad");
+		var edad = document.getElementById("edad").value;
 		var patt = new RegExp(/^[0-9\s]+$/g);
-		if (elementos[i].type =="number") {
+		if (elementos[i].getElementById =="edad") {
 			if (patt.test(edad.value)) {
 				alert('edad valido');
 				return true;
@@ -79,9 +80,9 @@
 		return true;
 	};
 	var valipeso= function () {
-		var peso = document.getElementById("peso");
+		var peso = document.getElementById("peso").value;
 		var patt = new RegExp(/^[0-9\s]+$/g);
-		if (elementos[i].type =="number") {
+		if (elementos[i].getElementById =="peso") {
 			if (patt.test(peso.value)) {
 				alert('peso valido');
 				return true;
@@ -117,6 +118,7 @@
 				}
 			}
 		}
+		return true;
 	};
 	
 	var validaroption = function(){
@@ -144,6 +146,7 @@
 				}
 			}
 		}
+		return true;
 	};
 
 	var validarCheckbox  = function(){
@@ -170,6 +173,7 @@
 				}
 			}
 		}
+		return true;
 	};
 	
 	var enviar = function(e){
@@ -177,7 +181,7 @@
 			console.log('Falto validar los Input');
 			e.preventDefault();
 		}else if (!valiletras()) {
-			console.log('Falto validar el nombre');
+			console.log('Nombre Inválido');
 			e.preventDefault();
 		} else if (!validarRadios()) {
 			console.log('Falto validar los Radio Button');
@@ -199,15 +203,6 @@
 			e.preventDefault();
 		}else if(!valipeso){
 			console.log('Falto validar el peso');
-			e.preventDefault();
-		}else if (!validarRadios()) {
-			console.log('Falto validar los Radio Button');
-			e.preventDefault();
-		}else if(!validaroption()){
-			console.log('Falto validar los Checkbox de ciudad');
-			e.preventDefault();
-		} else if (!validarCheckbox()) {
-			console.log('Falto validar Checkbox');
 			e.preventDefault();
 		}else {
 			alert('Envia');
@@ -237,4 +232,4 @@
 		}
 	}
 	
-}())
+}());
