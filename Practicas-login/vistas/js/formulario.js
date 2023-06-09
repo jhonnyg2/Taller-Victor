@@ -212,9 +212,7 @@
 			console.log('Falto validar el peso');
 			e.preventDefault();
 		}else {
-			alert(' Tiquete '+'<br>',' Nombre: '+letras+'<br>',' Correo: '+cor+'<br>',' Edad: '+edad+'<br>',' Ciudad de destino y valor: '+' h'+'<br>');
-			return true;
-			windowalert(' Tiquete '+'<br>',' Nombre: '+letras+'<br>',' Correo: '+cor+'<br>',' Edad: '+edad+'<br>',' Ciudad de destino y valor: '+' h'+'<br>');
+			document.getElementById('tiquete').value =' Tiquete '+'<br>',' Nombre: '+letras+'<br>',' Correo: '+cor+'<br>',' Edad: '+edad+'<br>',' Ciudad de destino y valor: '+' h'+'<br>';
 		}
 	};
 	
