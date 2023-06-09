@@ -87,7 +87,7 @@
 				alert('Fecha no valida')
 				return false;
 			}
-			return true;
+		return true;
 	};
 	var valipeso= function () {
 		var peso = document.getElementById("peso").value;
