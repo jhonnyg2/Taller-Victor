@@ -66,18 +66,27 @@
 		return true;
 	};
 	var valiedad= function () {
-		var edad = document.getElementById("edad").value;
-		var patt = new RegExp(/^[0-9\s]+$/g);
-		if (elementos[i].getElementById =="edad") {
-			if (patt.test(edad.value)) {
-				alert('edad valido');
-				return true;
-			}else{
-				alert('edad no valido')
-				return false;
-			}
-		}
-		return true;
+			// Obtener el valor del input por su ID
+			const fechaInput = document.getElementById('fecha').value;
+		  
+			// Obtener la fecha actual
+			const fechaActual = new Date();
+		  
+			// Obtener la fecha de nacimiento a partir del input
+			const partes = fechaInput.split('-');
+			const year = parseInt(partes[0], 10);
+			const month = parseInt(partes[1], 10);
+			const day = parseInt(partes[2], 10);
+			const fechaNacimiento = new Date(year, month - 1, day);
+		  
+			// Calcular la diferencia en milisegundos entre las dos fechas
+			const diferencia = fechaActual - fechaNacimiento;
+		  
+			// Calcular la edad dividiendo la diferencia en milisegundos entre la cantidad de milisegundos en un año
+			const edad = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365));
+		  
+			// Mostrar la edad en un elemento HTML (por ejemplo, un párrafo con el ID "resultadoEdad")
+			document.getElementById('resultadoEdad').textContent = "La edad es: " + edad + " años";
 	};
 	var valipeso= function () {
 		var peso = document.getElementById("peso").value;
