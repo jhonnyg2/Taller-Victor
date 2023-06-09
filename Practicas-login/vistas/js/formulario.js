@@ -9,7 +9,7 @@
 	var validarInputs = function(){
 		for (var i = 0; i < elementos.length; i++) {
 			// Identificamos si el elemento es de tipo texto, email, password, radio o checkbox
-			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type =="number") {
+			if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type =="number" || elementos[i].type =="date") {
 				// Si es tipo texto, email o numerico vamos a comprobar que esten completados los input
 				if (elementos[i].value.length == 0) {
 					console.log('El campo ' + elementos[i].name + ' esta incompleto');
@@ -23,16 +23,12 @@
 		return true;
 	};
 	var valiletras= function () {
-		var letras = document.getElementById("nombre").value;
-		var patt = new RegExp(/^[A-Za-z\s]+$/g);
-		if (elementos[i].type =="text") {
-			if (patt.test(letras.value)) {
-				alert('Nombre valido');
-				return true;
-			}else{
-				alert('Nombre no valido')
-				return false;
-			}
+		const input = document.getElementById('nombre');
+		const regex = /^[a-zA-Z\s]+$/g;
+		const textoValido = regex.test(input.value);
+
+		if (!textoValido) {
+			input.value = input.value.replace(/[^a-zA-Z\s]+$/g, '');
 		}
 		return true;
 	};
@@ -72,8 +68,8 @@
 			const fechaActual = new Date();
 		  
 			// Obtener la fecha de nacimiento a partir del input
-			if (elementos[i].getElementById== "fecha") {
-			const partes = fechaInput.split('-');
+			if (elementos[i].getElementById =="fecha") {
+			var partes = fechaInput.split('-');
 			const year = parseInt(partes[0], 10);
 			const month = parseInt(partes[1], 10);
 			const day = parseInt(partes[2], 10);
@@ -81,13 +77,14 @@
 		  // Calcular la diferencia en milisegundos entre las dos fechas
 			const diferencia = fechaActual - fechaNacimiento;
 				// Calcular la edad dividiendo la diferencia en milisegundos entre la cantidad de milisegundos en un año
-			const edad = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365));
+			var edad = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365));
 			return true;
 			}else{
 				alert('Fecha no valida')
 				return false;
 			}
-		return true;
+		return edad;
+
 	};
 	var valipeso= function () {
 		var peso = document.getElementById("peso").value;
@@ -215,14 +212,9 @@
 			console.log('Falto validar el peso');
 			e.preventDefault();
 		}else {
-			document.getElementById('resultadoEdad').textContent = "La edad es: " + edad + " años";
-			alert(' Tiquete '+'<br>',
-			' Nombre: '+letras+'<br>',
-			' Correo: '+cor+'<br>',
-			' Edad: '+edad+'<br>',
-			' Ciudad de destino y valor: '+''+'<br>'
-			);
+			alert(' Tiquete '+'<br>',' Nombre: '+letras+'<br>',' Correo: '+cor+'<br>',' Edad: '+edad+'<br>',' Ciudad de destino y valor: '+' h'+'<br>');
 			return true;
+			windowalert(' Tiquete '+'<br>',' Nombre: '+letras+'<br>',' Correo: '+cor+'<br>',' Edad: '+edad+'<br>',' Ciudad de destino y valor: '+' h'+'<br>');
 		}
 	};
 	
@@ -242,7 +234,7 @@
 	formulario.addEventListener("submit", enviar);
 	
 	for (var i = 0; i < elementos.length; i++) {
-		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "number") {
+		if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "number" || elementos[i].type == "date") {
 			elementos[i].addEventListener("focus", focusInput);
 			elementos[i].addEventListener("blur", blurInput);
 		}
