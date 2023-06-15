@@ -3,7 +3,6 @@
 
 	var formulario = document.formulario_registro,
 		elementos = formulario.elements;
-	
 	// Funcion que se ejecuta cuando el evento click es activado
 	
 	var validarInputs = function(){
@@ -23,7 +22,7 @@
 		return true;
 	};
 	var valiletras= function () {
-		const input = document.getElementById('nombre');
+		const input = document.getElementById('nombre').value;
 		const regex = /^[a-zA-Z\s]+$/g;
 		const textoValido = regex.test(input.value);
 
@@ -182,6 +181,7 @@
 		}
 		return true;
 	};
+
 	
 	var enviar = function(e){
 		if (!validarInputs()) {
@@ -212,10 +212,10 @@
 			console.log('Falto validar el peso');
 			e.preventDefault();
 		}else {
-			document.getElementById('tiquete').value =' Tiquete '+'<br>',' Nombre: '+letras+'<br>',' Correo: '+cor+'<br>',' Edad: '+edad+'<br>',' Ciudad de destino y valor: '+(elementos[i].type == "radio" && elementos[i].name == "opcion")+'<br>';
+			
+			alert(' Tiquete ')
 		}
 	};
-	
 	var focusInput = function(){
 		this.parentElement.children[1].className = "label active";
 		this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");

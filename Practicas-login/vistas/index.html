@@ -6,6 +6,17 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<title>Formularios</title>
+	<script>
+		function actualizar() {
+			var nombre = document.getElementById('nombre');
+			var parrafo = document.getElementsById('tiquete');
+			var correo = document.getElementById('correo');
+			var fecha = document.getElementById('fecha');
+			var option = document.getElementsByName('opcion');
+			
+			parrafo.textContent = nombre.value;
+		}
+	</script>
 </head>
 <body>
 	<div class="contenedor-formulario">
@@ -16,15 +27,16 @@
 						<label class="label">Proceso de tiqueteria</label><br><br>
 					</div>
 					<div class="input-group">
-						<input type="text" id="nombre" name="nombre">
+						<input type="text" id="nombre" name="nombre" oninput="actualizar()">
 						<label class="label" for="Nombres">Nombres y Apellidos:</label>
+						<p id="tiquete" style="background-color: black;">hola</p>
 					</div>
 					<div class="input-group">
 						<input type="text" id="direccion" name="direccion">
 						<label class="label" for="direccion">Direccion:</label>
 					</div>
 					<div class="input-group">
-						<input type="text" id="telefono" name="telefono">
+						<input type="number" id="telefono" name="telefono">
 						<label class="label" for="telefono">Telefono:</label>
 					</div>
 					<div class="input-group">
@@ -83,9 +95,7 @@
 					</div>
 						
 					<input type="submit" id="btn-submit" value="Enviar">
-					<div>
-						<p id="tiquete"></p>
-					</div>
+					
 				</div>
 			</form>
 		</div>
